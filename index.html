@@ -16,15 +16,14 @@
         </div>
         <div class="text-block3">Looking at this face,<br> one can assume that it<br> expresses not just the<br> emotions of one person,<br> but is a symbol of the<br> suffering that all of<br>Luminaria's<br> "subordinates" endured
         </div>
-        <div class="text-block-top">
-            Scan of a pet- <br>rified face found <br> in tunnel 3-80-7
+        <div class="text-block-top">Scan of a pet- <br>rified face found <br>in tunnel 3-80-7
         </div>
     </div>
 
     <!-- Вставка JavaScript -->
     <script>
         // Массив символов для шифрования
-        const possibleChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/';
+        const possibleChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
     
         // Функция для генерации случайной строки заданной длины
         function randomString(length) {
@@ -35,20 +34,21 @@
             return result;
         }
     
-        // Функция для шифрования случайных слов в тексте, сохранение <br>
-        function encryptText(blockId, originalText) {
+        // Функция для шифрования только выбранных слов
+        function encryptSelectedWords(blockId, wordsToEncrypt) {
             const block = document.querySelector(blockId);
+            let originalText = block.innerHTML;
     
             // Сохраняем <br> теги как маркер, чтобы их не потерять
             const preservedText = originalText.replace(/<br\s*\/?>/g, '___BR___');
             
             // Разделяем текст на слова
-            const words = preservedText.split(' ');
+            let words = preservedText.split(' ');
     
             setInterval(() => {
                 const newWords = words.map(word => {
-                    // С вероятностью 30% заменяем слово на случайные символы
-                    if (Math.random() < 0.3) {
+                    // Если слово входит в список слов для шифрования, заменяем его на случайное
+                    if (wordsToEncrypt.includes(word)) {
                         return randomString(word.length); // Генерируем случайное слово
                     } else {
                         return word; // Оставляем слово как есть
@@ -60,19 +60,24 @@
     
                 // Обновляем содержимое блока
                 block.innerHTML = newText;
-            }, 150); // Интервал смены слов
+            }, 50); // Интервал смены слов
         }
     
-        // Тексты для шифрования (не трогаем блок 6)
-        const textBlock2 = 'The cast, judging by its expression, was left at a moment of extreme psychological influence – perhaps this man was caught in the radio waves emitted by the worm Luminaria, or he found himself in the zone of some psychoactive influence that left him no chance of resistance.';
-        const textBlock3 = 'Looking at this face, one can assume that it expresses not just the emotions of one person, but is a symbol of the suffering that all of Luminaria\'s "subordinates" endured.';
-        const textBlockTop = 'Scan of a petrified face found in tunnel 3-80-7';
+        // Слово, которые будут шифроваться для каждого блока
+        const textBlockWords = {
+            '.text-block': ['archaeological', 'excavations', 'Tunnel', 'office', 'General'],
+            '.text-block2': ['cast', 'expression', 'psychological', 'waves', 'Luminaria'],
+            '.text-block3': ['Looking', 'emotion', 'suffering', 'subordinates', 'endured'],
+            '.text-block-top': ['Scan', 'petrified', 'face', 'tunnel', 'found'],
+            '.text-block6': ['subordinates', 'expression', 'influence', 'psychological', 'waves']
+        };
     
-        // Применяем эффект шифрования ко всем текстовым блокам
-        encryptText('.text-block2', textBlock2);
-        encryptText('.text-block3', textBlock3);
-        encryptText('.text-block-top', textBlockTop);
+        // Применяем шифрование ко всем блокам с соответствующими словами
+        for (const [blockId, words] of Object.entries(textBlockWords)) {
+            encryptSelectedWords(blockId, words);
+        }
     </script>
+    
 
 </body>
 </html>
