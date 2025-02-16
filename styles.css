@@ -1,0 +1,75 @@
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
+
+body {
+    font-family: 'IBM Plex Mono', monospace;
+}
+body {
+    text-align: center;
+    background-color: #121212; /* Темный фон */
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+
+/* Стили для изображения */
+
+.container {
+    display: flex;
+    justify-content: center; /* Центрирует по горизонтали */
+    align-items: center; /* Центрирует по вертикали */
+    height: 100vh; /* Контейнер на весь экран */
+}
+
+img {
+    width: 23vw; /* 30% ширины экрана */
+    height: auto; /* Сохраняет пропорции */
+}
+.text-block {
+    position: absolute; /* Позиционирование относительно контейнера */
+    right: 0; /* Размещение у правого края картинки */
+    max-width: 40%; /* Ограничиваем ширину блока */
+    color: white;
+    margin-right: 22%;
+    text-align: left; /* Выравнивание текста влево */
+    font-size: 19px;
+}
+.text-block2 {
+        position: absolute;
+        bottom: -10%; /* Расположим текст чуть ниже картинки */
+        transform: translateX(-50%) rotate(90deg); /* Переворачиваем текст на 90 градусов */
+        font-size: 19px;
+        margin-left: 10% ;
+        text-align: left; /* Центрируем текст внутри блока */
+    }
+    .text-block3 {
+        position: absolute;
+        left: 0; /* Размещение у левого края картинки */
+        max-width: 40%;
+        color: white;
+        margin-left: 24%; /* Отступ от левого края */
+        text-align: right; /* Выравнивание текста по правому краю */
+        font-size: 19px;
+    }
+    .text-block-top {
+        position: absolute;
+        top: 13%; /* Размещение блока немного выше картинки, можно увеличить значение */
+        left: 28%; /* Центрируем по горизонтали */
+        transform: translateX(50%) rotate(-90deg); /* Поворот на 90 градусов */
+        font-size: 19px;
+        text-align: left; /* Центрируем текст внутри блока */
+        color: white;
+        padding: 10px;
+        width: 200px; /* Ограничиваем ширину блока */
+    }
+    .text-block6 {
+    position: absolute; /* Позиционирование относительно контейнера */
+    right: 0; /* Размещение у правого края картинки */
+    max-width: 40%; /* Ограничиваем ширину блока */
+    color: white;
+    margin-right: 28%;
+    text-align: left; /* Выравнивание текста влево */
+    font-size: 19px;
+    margin-top: 32%;
+    }
