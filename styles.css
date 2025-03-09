@@ -4,7 +4,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: black;
+    background: linear-gradient(to bottom, #000000 0%, #000000 54%, #232222 100%); /* От левого края к правому */
     overflow: hidden;
     transition: transform 1.5s ease-in-out, opacity 1.5s, filter 1.5s;
 }
@@ -19,4 +19,114 @@ body {
     left: 50%; 
     transform: translateX(-50%); 
     top: 1vh; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.img_container {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 40%; /* Сдвигаем по вертикали, чтобы имел отступ сверху */
+    left: 50%; /* Сдвигаем в центр по горизонтали */
+    transform: translateX(-50%); /* Центрируем по горизонтали */
+    display: flex;
+    justify-content: center; /* Выравнивание изображений по центру */
+    align-items: center;
+    gap: 2%; /* Промежуток между картинками */
+    width: 98%; /* Контейнер занимает всю ширину */
+    z-index: 3; /* Контейнер будет выше, чем 3D модель */
+
+}
+
+.img_container img {
+    height: auto; /* Сохраняем пропорции */
+    display: block; /* Убираем лишний пробел от inline-элементов */
+    margin: 0; /* Убираем возможные отступы */
+    padding: 0; /* Убираем возможные внутренние отступы */
+}
+
+/* Текстовые блоки */
+.text_block_2 {
+    width: 35%;
+    margin: 3vh auto; /* Отступ сверху и центрирование */
+    display: flex; /* Выравнивание внутри */
+    margin-left: 7%;
+}
+
+.text_block_2 img {
+    width: 100%;
+    height: auto;
+}
+
+.text_block_3 {
+    width: 45%;
+    margin: 3vh auto; /* Отступ сверху и центрирование */
+    display: flex; /* Выравнивание внутри */
+    margin-right: 7%;
+}
+
+.text_block_3 img {
+    width: 100%;
+    height: auto;
+}
+
+.model_case_3d {
+    position: relative; /* Для корректного наложения */
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 2; /* Блок с 3D моделью */
+}
+
+.model_case_3d img {
+    width: 100%; /* Убедитесь, что картинка 3D модели заполняет контейнер */
+    height: auto;
+}
+
+/* Блок с изображением, которое будет вращаться */
+.model_case_3d_hole {
+    position: absolute; /* Абсолютное позиционирование, чтобы не смещалась */
+    top: 50%; /* Позиционируем элемент по вертикали */
+    left: 52%; /* Позиционируем элемент по горизонтали */
+    transform: translate(-50%, -50%); /* Центрируем элемент в родительском контейнере */
+    z-index: 1; /* Блок будет выше остальных элементов */
+}
+
+.model_case_3d_hole img {
+    width: 86%; /* Устанавливаем размер картинки */
+    height: auto; /* Сохраняем пропорции */
+
+    /* Устанавливаем точку вращения в центр картинки */
+    transform-origin: center;
+
+    /* Анимация вращения */
+    animation: rotateImage 1.5s infinite linear;
+}
+
+@keyframes rotateImage {
+    0% {
+        transform: rotate(0deg); /* Начальная позиция */
+    }
+    100% {
+        transform: rotate(360deg); /* Полный поворот по часовой стрелке */
+    }
+}
+.texture-overlay {
+    position: fixed; /* Фиксированное положение, чтобы всегда было поверх всего */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Покрывает всю ширину экрана */
+    height: 100vh; /* Покрывает всю высоту экрана */
+    background: url("images/image_60.png") repeat; /* Подставьте свою текстуру */
+    pointer-events: none; /* Отключаем взаимодействие с текстурой */
+    z-index: 9999; /* Делаем поверх всего */
 }
