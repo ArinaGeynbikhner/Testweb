@@ -31,29 +31,22 @@ document.addEventListener("DOMContentLoaded", () => {
     let activeItem = null;
     let shiftX = 0, shiftY = 0;
 
-    // Для каждого перетаскиваемого элемента
     draggables.forEach(item => {
         item.addEventListener("mousedown", (e) => {
-            if (e.button !== 0) return; // Работает только с левой кнопкой мыши
+            if (e.button !== 0) return; 
 
             activeItem = item;
 
-            // Получаем координаты элемента перед перемещением
             const rect = activeItem.getBoundingClientRect();
-
-            // Запоминаем смещение клика относительно верхнего левого угла элемента
             shiftX = e.clientX - rect.left;
             shiftY = e.clientY - rect.top;
 
-            // Делаем элемент абсолютным для точного перемещения
             activeItem.style.position = "absolute";
-            activeItem.style.zIndex = "1000"; // Ставим элемент выше других
+            activeItem.style.zIndex = "1000";
 
-            // Двигаем элемент в точку клика (без сдвигов)
             activeItem.style.left = `${e.clientX - shiftX}px`;
             activeItem.style.top = `${e.clientY - shiftY}px`;
 
-            // Слушаем движение мыши
             document.addEventListener("mousemove", moveItem);
             document.addEventListener("mouseup", dropItem);
         });
@@ -62,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function moveItem(e) {
         if (!activeItem) return;
 
-        // Двигаем элемент за курсором, начиная с того места, где был клик
+        // Двигаем элемент за курсором
         activeItem.style.left = `${e.clientX - shiftX}px`;
         activeItem.style.top = `${e.clientY - shiftY}px`;
     }
@@ -73,25 +66,34 @@ document.addEventListener("DOMContentLoaded", () => {
         const holeRect = blackHole.getBoundingClientRect();
         const itemRect = activeItem.getBoundingClientRect();
 
-        // Проверяем, попал ли объект в черную дыру
+        // Проверка попадания в черную дыру
         if (
             itemRect.left + itemRect.width / 2 > holeRect.left &&
             itemRect.left + itemRect.width / 2 < holeRect.right &&
             itemRect.top + itemRect.height / 2 > holeRect.top &&
             itemRect.top + itemRect.height / 2 < holeRect.bottom
         ) {
-            activeItem.classList.add("falling"); // Запускаем анимацию исчезновения
+            activeItem.classList.add("falling"); 
+
+            
             setTimeout(() => {
-                activeItem.remove(); // Удаляем объект после анимации
-            }, 700);
+                
+                activeItem.remove();
+                
+                // Переход на второй HTML файл
+                window.location.href = "nextpage.html"; 
+            }, 700); 
+        } else {
+            activeItem.style.left = `${e.clientX - shiftX}px`;
+            activeItem.style.top = `${e.clientY - shiftY}px`;
         }
 
-        // Убираем слушателей событий и сбрасываем активный элемент
         document.removeEventListener("mousemove", moveItem);
         document.removeEventListener("mouseup", dropItem);
         activeItem = null;
     }
 });
+
     </script>
 </body>
 </html>

@@ -132,6 +132,7 @@ body {
 }
 .black-hole {
     position: fixed;
+    margin-top: 1%;
     left: 50%;
     transform: translateX(-50%);
     width: 20vw; /* Размер дыры */
@@ -150,8 +151,9 @@ body {
     animation: fallToBlackHole 0.7s ease-in forwards;
 }
 
+/* Анимация для падения в черную дыру */
 .falling {
-    animation: fallToBlackHole 0.7s ease-in forwards;
+    animation: fallToBlackHole 1s ease-in forwards;
 }
 
 @keyframes fallToBlackHole {
@@ -167,4 +169,23 @@ body {
         transform: scale(0) rotate(360deg);
         opacity: 0;
     }
+}
+
+/* Скрытие элемента после анимации */
+.hidden {
+    display: none;
+}
+
+/* Определим для черной дыры */
+.black-hole {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20vw;
+    height: 20vw;
+    background: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0) 100%);
+    border-radius: 50%;
+    opacity: 0.5;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    z-index: -2;
 }
