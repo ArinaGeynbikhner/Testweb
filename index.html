@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./styles.css">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script src="./model.js"> </script>
+    <script src="./console.js"> </script>
 </head>
 <body>
     <section class="my_common_screen block">
@@ -26,8 +27,23 @@
     </section>
 
     <section class="section2 hidden">
-        <div class="head_case"><img src="images/head.png" alt=""></div>
+        <div class="head_case"><img src="images/head2_1.png" alt=""></div>
+        <div class="console"> Welcome to the system. Type a command to get information: <br> 
+                              <br>
+                              Type «info [face]» to get details about the object. <br>
+                              <br>
+                              Enter а command: <input type="text" id="commandInput" placeholder="Type a command" />
+                              <button onclick="executeCommand()">Submit</button></div>
+         <div class="Y">Y</div>
+         <div class="X">X</div>
+         <div class="text_block_scan">SCAN OF A <br>PETRIFIED FACE <br>FOUND IN TUNNEL <br>3-80-7</div>
+         <div class="texture-overlay"></div>
+                         
     </section>
-
+    <section class="nextSection hidden">
+        <h1>Next Section</h1>
+        <p>This is the next section after entering the correct command.</p>
+    </section>
+    
 </body>
 </html>
