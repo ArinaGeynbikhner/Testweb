@@ -23,17 +23,19 @@ body {
     }
     
     .img_container {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translateX(-50%);
+        position: fixed; /* Фиксируем контейнер на экране */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Сдвигаем контейнер на 50% его ширины и высоты */
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 2%;
-        width: 98%;
-        z-index: 3;
+        gap: 2%; /* Пространство между элементами в контейнере */
+        width: 90vw; /* 80% от ширины экрана */
+        height: auto; /* Высота будет адаптироваться под содержимое */
+        z-index: 3; /* Приоритет отображения */
     }
+    
     
     .img_container img {
         height: auto;
@@ -68,34 +70,43 @@ body {
     }
     
     .model_case_3d {
-        position: absolute;
-        top: 20vh; /* Такой же, как у img_container */
-        left: 50%;
-        transform: translateX(-50%);
+        position: fixed; /* Фиксируем блок на экране */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Сдвигаем блок на 50% его ширины и высоты */
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 83%;
+        width: 80vw; /* 80% ширины экрана */
+        height: auto; /* Автоматическая высота, которая будет зависеть от ширины */
+        max-width: 1200px; /* Максимальная ширина */
         z-index: 2;
     }
     
+    
     .model_case_3d img {
         width: 100%;
-        height: auto;
+        height: auto; /* Пропорции сохраняются */
+        object-fit: contain; /* Или cover, в зависимости от того, что нужно */
     }
     
     .model_case_3d_hole {
         position: absolute;
         top: 50%;
-        left: 52%;
+        left: 50%;
         transform: translate(-50%, -50%);
         z-index: 1;
+        width: 20vw; /* Используем относительные единицы */
+        height: auto; /* Высота будет пропорциональной ширине */
+        max-width: 100vw; /* Ограничиваем максимальную ширину */
+        max-height: 100vh; /* Ограничиваем максимальную высоту */
     }
     
+    
     .model_case_3d_hole img {
-        width: 86%;
-        height: auto;
-        transform-origin: center;
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Сохраняет пропорции изображения, чтобы оно целиком помещалось в блок */
         animation: rotateImage 1s infinite linear;
     }
     
@@ -109,19 +120,20 @@ body {
     }
     
     .texture-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: url("images/image_60.png") repeat;
-        pointer-events: none;
-        z-index: 9999;
+        position: fixed; /* Фиксируем слой на экране */
+        top: 0; /* Прикрепляем к верхнему краю */
+        left: 0; /* Прикрепляем к левому краю */
+        width: 100vw; /* Ширина блока — 100% от ширины экрана */
+        height: 100vh; /* Высота блока — 100% от высоты экрана */
+        background: url("images/image_60.png") no-repeat center center; /* Устанавливаем фон с изображением */
+        background-size: cover; /* Изображение будет масштабироваться, чтобы покрыть весь экран */
+        pointer-events: none; /* Отключаем взаимодействие с этим слоем (например, клики) */
+        z-index: 9999; /* Обеспечиваем, что слой будет сверху всех остальных элементов */
     }
     
     .black-hole {
         position: fixed;
-        margin-top: 1%;
+        top: 1%;
         left: 50%;
         transform: translateX(-50%);
         width: 20vw;
@@ -131,7 +143,15 @@ body {
         opacity: 0.5;
         box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
         z-index: -2;
+        max-width: 100vw; /* Ограничиваем максимальную ширину */
+        max-height: 100vw; /* Ограничиваем максимальную высоту */
     }
+    .model_case_3d_hole img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Сохраняет пропорции изображения, чтобы оно целиком помещалось в блок */
+    }
+        
     
     .draggable {
         cursor: grab;
@@ -175,34 +195,37 @@ body {
         position: relative;
     }
     
-    .my_common_screen{
-        /* display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center; */
+    .my_common_screen {
         width: 100%;
-        height: 100vh;
+        height: 100vh; /* Полная высота экрана */
         background: linear-gradient(to bottom, #000000 0%, #000000 54%, #232222 100%);
-        overflow: hidden;
-        transition: transform 1.5s ease-in-out, opacity 1.5s, filter 1.5s;
+        overflow: hidden; /* Убираем прокрутку */
     }
+    
 
     html, body {
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-        background: (to bottom, #000000 0%, #000000 54%, #232222 100%);
+        height: 100%;
+        margin: 0; /* Убираем стандартные отступы */
+        overflow: hidden; /* Отключаем прокрутку */
+        background-color: #000000; /* Устанавливаем черный фон */
     }
-
+    
     .head_case {
-            position: absolute;
-            top: 20vh; /* Такой же, как у img_container */
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 83%;
-            z-index: 2;
-            background-color: #ffffff;
+        position: fixed; /* Фиксируем элемент относительно окна */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Сдвигаем элемент на 50% от его размера */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        width: 100%;  /* Ширина элемента будет 100% от ширины экрана */
+        height: auto; /* Высота элемента будет автоматически */
     }
+    
+    .head_case img {
+        max-width: 100%;   /* Ширина изображения будет адаптироваться к экрану */
+        height: auto;      /* Высота изображения будет сохранять пропорции */
+        object-fit: contain; /* Сохраняем пропорции изображения */
+    }
+    

@@ -64,11 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }, 700);
         }
-
-        // // Очищаем перемещение
-        // document.removeEventListener("mousemove", moveItem);
-        // document.removeEventListener("mouseup", dropItem);
-        // activeItem = null;
     }
 
     function checkIfAllDisappeared() {
@@ -98,8 +93,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Функция показа секции
     function showSection(section) {
         if (section) {
-            section.style.display = "block"; // Показываем секцию с помощью display: block
+            section.classList.remove("hidden"); // Убираем скрытие
+            section.classList.add("show"); // Добавляем класс для показа
+            section.style.opacity = 1; // Обеспечиваем видимость
             console.log('Вторая секция показана');
+            
+            
+            const headCase = section.querySelector('.head_case');
+            console.log('head_case:', headCase);
         } else {
             console.log('Вторая секция не найдена');
         }
