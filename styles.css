@@ -1,191 +1,208 @@
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: linear-gradient(to bottom, #000000 0%, #000000 54%, #232222 100%); /* От левого края к правому */
-    overflow: hidden;
-    transition: transform 1.5s ease-in-out, opacity 1.5s, filter 1.5s;
-}
-.text_block_1 {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 1.5vw;
-    color: #ffffff; 
-    padding: 2%;
-    width: 60%;
-    text-align: center; 
-    position: absolute; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    top: 1vh; 
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.img_container {
-    position: absolute; /* Абсолютное позиционирование */
-    top: 40%; /* Сдвигаем по вертикали, чтобы имел отступ сверху */
-    left: 50%; /* Сдвигаем в центр по горизонтали */
-    transform: translateX(-50%); /* Центрируем по горизонтали */
-    display: flex;
-    justify-content: center; /* Выравнивание изображений по центру */
-    align-items: center;
-    gap: 2%; /* Промежуток между картинками */
-    width: 98%; /* Контейнер занимает всю ширину */
-    z-index: 3; /* Контейнер будет выше, чем 3D модель */
-
-}
-
-.img_container img {
-    height: auto; /* Сохраняем пропорции */
-    display: block; /* Убираем лишний пробел от inline-элементов */
-    margin: 0; /* Убираем возможные отступы */
-    padding: 0; /* Убираем возможные внутренние отступы */
-}
-
-/* Текстовые блоки */
-.text_block_2 {
-    width: 35%;
-    margin: 3vh auto; /* Отступ сверху и центрирование */
-    display: flex; /* Выравнивание внутри */
-    margin-left: 7%;
-}
-
-.text_block_2 img {
     width: 100%;
-    height: auto;
-}
-
-.text_block_3 {
-    width: 45%;
-    margin: 3vh auto; /* Отступ сверху и центрирование */
-    display: flex; /* Выравнивание внутри */
-    margin-right: 7%;
-}
-
-.text_block_3 img {
-    width: 100%;
-    height: auto;
-}
-
-.model_case_3d {
-    position: relative; /* Для корректного наложения */
-    width: 100%;
-    max-width: 1200px;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 2; /* Блок с 3D моделью */
-}
-
-.model_case_3d img {
-    width: 100%; /* Убедитесь, что картинка 3D модели заполняет контейнер */
-    height: auto;
-}
-
-/* Блок с изображением, которое будет вращаться */
-.model_case_3d_hole {
-    position: absolute; /* Абсолютное позиционирование, чтобы не смещалась */
-    top: 50%; /* Позиционируем элемент по вертикали */
-    left: 52%; /* Позиционируем элемент по горизонтали */
-    transform: translate(-50%, -50%); /* Центрируем элемент в родительском контейнере */
-    z-index: 1; /* Блок будет выше остальных элементов */
-}
-
-.model_case_3d_hole img {
-    width: 86%; /* Устанавливаем размер картинки */
-    height: auto; /* Сохраняем пропорции */
-
-    /* Устанавливаем точку вращения в центр картинки */
-    transform-origin: center;
-
-    /* Анимация вращения */
-    animation: rotateImage 1s infinite linear;
-}
-
-@keyframes rotateImage {
-    0% {
-        transform: rotate(0deg); /* Начальная позиция */
+    height: 100vw;
+    overflow-x: hidden;
     }
-    100% {
-        transform: rotate(360deg); /* Полный поворот по часовой стрелке */
+    .text_block_1 {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 1.5vw;
+        color: #ffffff;
+        padding: 2%;
+        width: 60%;
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 1vh;
     }
-}
-.texture-overlay {
-    position: fixed; /* Фиксированное положение, чтобы всегда было поверх всего */
-    top: 0;
-    left: 0;
-    width: 100vw; /* Покрывает всю ширину экрана */
-    height: 100vh; /* Покрывает всю высоту экрана */
-    background: url("images/image_60.png") repeat; /* Подставьте свою текстуру */
-    pointer-events: none; /* Отключаем взаимодействие с текстурой */
-    z-index: 9999; /* Делаем поверх всего */
-}
-.black-hole {
-    position: fixed;
-    margin-top: 1%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 20vw; /* Размер дыры */
-    height: 20vw;
-    background: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0) 100%);
-    border-radius: 50%;
-    opacity: 0.5;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
-    z-index: -2;
-}
-.draggable {
-    cursor: grab;
-    user-select: none;
-}
-.falling {
-    animation: fallToBlackHole 0.7s ease-in forwards;
-}
-
-/* Анимация для падения в черную дыру */
-.falling {
-    animation: fallToBlackHole 1s ease-in forwards;
-}
-
-@keyframes fallToBlackHole {
-    0% {
-        transform: scale(1) rotate(0deg);
-        opacity: 1;
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
-    50% {
-        transform: scale(0.5) rotate(180deg);
+    
+    .img_container {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2%;
+        width: 98%;
+        z-index: 3;
+    }
+    
+    .img_container img {
+        height: auto;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Текстовые блоки */
+    .text_block_2 {
+        width: 35%;
+        margin: 3vh auto;
+        display: flex;
+        margin-left: 7%;
+    }
+    
+    .text_block_2 img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .text_block_3 {
+        width: 45%;
+        margin: 3vh auto;
+        display: flex;
+        margin-right: 7%;
+    }
+    
+    .text_block_3 img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .model_case_3d {
+        position: absolute;
+        top: 20vh; /* Такой же, как у img_container */
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 83%;
+        z-index: 2;
+    }
+    
+    .model_case_3d img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .model_case_3d_hole {
+        position: absolute;
+        top: 50%;
+        left: 52%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+    
+    .model_case_3d_hole img {
+        width: 86%;
+        height: auto;
+        transform-origin: center;
+        animation: rotateImage 1s infinite linear;
+    }
+    
+    @keyframes rotateImage {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    
+    .texture-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: url("images/image_60.png") repeat;
+        pointer-events: none;
+        z-index: 9999;
+    }
+    
+    .black-hole {
+        position: fixed;
+        margin-top: 1%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20vw;
+        height: 20vw;
+        background: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0) 100%);
+        border-radius: 50%;
         opacity: 0.5;
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+        z-index: -2;
     }
-    100% {
-        transform: scale(0) rotate(360deg);
-        opacity: 0;
+    
+    .draggable {
+        cursor: grab;
+        user-select: none;
     }
-}
+    
+    .falling {
+        animation: fallToBlackHole 1s ease-in forwards;
+    }
+    
+    @keyframes fallToBlackHole {
+        0% {
+            transform: scale(1) rotate(0deg);
+            opacity: 1;
+        }
+        50% {
+            transform: scale(0.5) rotate(180deg);
+            opacity: 0.5;
+        }
+        100% {
+            transform: scale(0) rotate(360deg);
+            opacity: 0;
+        }
+    }
+    .block{
+        display: block;
+    }
+    .my_common_screen {
+        transition: opacity 1.5s ease-out;
+    }
+    
+    
+    .hidden {
+        display: none;
+    }
+    
+    .section2 {
+        width: 100%;
+        height: 60vw;
+        background: rgb(0, 0, 0);
+        position: relative;
+    }
+    
+    .my_common_screen{
+        /* display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; */
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(to bottom, #000000 0%, #000000 54%, #232222 100%);
+        overflow: hidden;
+        transition: transform 1.5s ease-in-out, opacity 1.5s, filter 1.5s;
+    }
 
-/* Скрытие элемента после анимации */
-.hidden {
-    display: none;
-}
+    html, body {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background: (to bottom, #000000 0%, #000000 54%, #232222 100%);
+    }
 
-/* Определим для черной дыры */
-.black-hole {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 20vw;
-    height: 20vw;
-    background: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0) 100%);
-    border-radius: 50%;
-    opacity: 0.5;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
-    z-index: -2;
-}
+    .head_case {
+            position: absolute;
+            top: 20vh; /* Такой же, как у img_container */
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 83%;
+            z-index: 2;
+            background-color: #ffffff;
+    }
