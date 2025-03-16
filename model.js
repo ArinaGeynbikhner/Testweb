@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
             activeItem.classList.add("falling");
 
             setTimeout(() => {
-                // Удаляем элемент после 700 мс (когда он «падает» в черную дыру)
+                // Удаляем элемент после 700 мс (когда он падает в черную дыру)
                 if (activeItem && activeItem.parentElement) {
                     activeItem.remove();
                     console.log('Элемент удалён');

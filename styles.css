@@ -397,12 +397,432 @@ body {
     }
     
     .finalSection {
+        color: #000000;
+        background-color: #000000;
         width: 100%;
-        height: 100vh;
-        background: rgb(255, 255, 255);
+        height: 100vh;  /* Высота на весь экран */
+        position: relative; /* Относительное позиционирование для контейнера */
+    }
+
+    .text-block-map {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 1vw;
+        color: #ffffff;
+        width: 60%;
+        text-align: left;
+        position: absolute;
+        left: 31%;
+        transform: translateX(-50%);
+        top: 1vh;
+        z-index: 11;
+    }
+    
+    .container2 {
         display: flex;
         justify-content: center;
         align-items: center;
-        color: white;
+        width: 100%; /* на весь экран */
+        height: 100%; /* на весь экран */
+        position: relative; /* от этого контейнера будут зависеть все блоки */
+    }
+
+    .center {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 85;
+    }
+    .center img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+    .tunnel1-6-08 {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 61;
+    }
+    .tunnel1-6-08 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+    .tunnel1-9-07 {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 62;
+    }
+    .tunnel1-9-07 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain; 
+    }
+    .tunnel1-10-06 {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 63;
+    }
+    .tunnel1-10-06 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain; 
+    }
+    .tunnel2-3-01 {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 65;
+    }
+    .tunnel2-3-01 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain; 
+    }
+    .tunnel2-5-06 {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 66;
+    }
+    .tunnel2-5-06 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain; 
+    }
+    .tunnel2-8-10 {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 67;
+    }
+    .tunnel2-8-10 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain; 
+    }
+    .tunnel3-1-02 {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 68;
+    }
+    .tunnel3-1-02 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain; 
+    }
+    .tunnel3-3-06 {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 69;
+    }
+    .tunnel3-3-06 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain; 
+    }
+    .tunnel3-6-08 {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 70;  
+    }
+    .tunnel3-6-08 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain; 
+    }
+    .tunnel3-9-10 {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 71;
+    }
+    .tunnel3-9-10 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain; 
+    }
+    .tunnel4-2-03 {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 72;
+    }
+    .tunnel4-2-03 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain; 
+    }
+    .tunnel4-5-07 {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 73;
+    }
+    .tunnel4-5-07 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain; 
+    }
+    .tunnel5-2-03 {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 74;
+    }
+    .tunnel5-2-03 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain; 
+    }
+    .tunnel5-6-08 {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 75;
+    }
+    .tunnel5-6-08 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain; 
+    }
+    .tunnel5-7-10 {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 76;
+    }
+    .tunnel5-7-10 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain; 
+    }
+    .tunnel6-6-03 {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 77;
+    }
+    .tunnel6-6-03 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain; 
+    }
+    .tunnel6-9-09 {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 78;
+    }
+    .tunnel6-9-09 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain; 
+    }
+    .tunnel6-10-10 {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 79;
+    }
+    .tunnel6-10-10 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain; 
+    }
+    .tunnel7-1-02 {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 80;
+    }
+    .tunnel7-1-02 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain; 
+    }
+    .tunnel7-3-10 {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 81;
+    }
+    .tunnel7-3-10 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain; 
+    }
+    .tunnel7-6-10 {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 82;
+    }
+    .tunnel7-6-10 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain; 
+    }
+    .tunnel8-6-10 {
+        position: fixed; /* Блок с картинкой будет основой для позиционирования */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%); /* Центрируем */
+        width: 80%;  /* Ширина картинки */
+        z-index: 83;
+    }
+    .tunnel8-6-10 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain; 
+    }
+    .building1, .building2, .building3, .building4, .building5, .building6, .building7, .building8, .building9, .building10, 
+    .building11, .building12,.building13, .building14, .building15, .building16, .building17, .building18, .building19, 
+    .building20, .building21, .building22, .building23  {
+        position: absolute; /* Абсолютное позиционирование внутри .section */
+        top: 50%; /* Центрируем по вертикали */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%) scale(0.8);
     }
     
+    .building1 {
+        z-index: 24; /* Z-index ниже */
+    }
+    
+    .building2 {
+        z-index: 25; /* Z-index выше */
+    }
+
+    .building3 {
+        z-index: 25; /* Z-index выше */
+    }
+
+    .building4 {
+        z-index: 25; /* Z-index выше */
+    }
+
+    .building5 {
+        z-index: 26; /* Z-index выше */
+    }
+
+    .building6 {
+        z-index: 27; /* Z-index выше */
+    }
+    .building7 {
+        z-index: 28; /* Z-index ниже */
+    }
+    
+    .building8 {
+        z-index: 29; /* Z-index выше */
+    }
+
+    .building9 {
+        z-index: 30; /* Z-index выше */
+    }
+
+    .building10 {
+        z-index: 31; /* Z-index выше */
+    }
+    
+    .building11 {
+        z-index: 32; /* Z-index выше */
+    }
+
+    .building12 {
+        z-index: 33; /* Z-index выше */
+    }
+
+    .building14 {
+        z-index: 34; /* Z-index ниже */
+    }
+    
+    .building15 {
+        z-index: 35; /* Z-index выше */
+    }
+
+    .building16 {
+        z-index: 36; /* Z-index выше */
+    }
+
+    .building17 {
+        z-index: 37; /* Z-index выше */
+    }
+
+    .building19 {
+        z-index: 38; /* Z-index выше */
+    }
+
+    .building20 {
+        z-index: 39; /* Z-index выше */
+    }
+    .building21 {
+        z-index: 40; /* Z-index ниже */
+    }
+    
+    .building22 {
+        z-index: 41; /* Z-index выше */
+    }
+
+    .building23 {
+        z-index: 42; /* Z-index выше */
+    }
+    .texture-overlay2 {
+        position: fixed; /* Фиксируем слой на экране */
+        top: 0; /* Прикрепляем к верхнему краю */
+        left: 0; /* Прикрепляем к левому краю */
+        width: 100vw; /* Ширина блока — 100% от ширины экрана */
+        height: 100vh; /* Высота блока — 100% от высоты экрана */
+        background: url("images/image_60.png") no-repeat center center; /* Устанавливаем фон с изображением */
+        background-size: cover; /* Изображение будет масштабироваться, чтобы покрыть весь экран */
+        pointer-events: none; /* Отключаем взаимодействие с этим слоем (например, клики) */
+        z-index: 60; /* Обеспечиваем, что слой будет сверху всех остальных элементов */
+    }
