@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script src="./model.js"> </script>
     <script src="./console.js"> </script>
+    <script src="./shifr.js"> </script>
 </head>
 <body>
     <section class="my_common_screen block">
@@ -28,21 +29,44 @@
 
     <section class="section2 hidden">
         <div class="head_case"><img src="images/head2_1.png" alt=""></div>
-        <div class="console"> Welcome to the system. Type a command to get information: <br> 
-                              <br>
-                              Type «info [face]» to get details about the object. <br>
-                              <br>
-                              Enter а command: <input type="text" id="commandInput" placeholder="Type a command" />
-                              <button onclick="executeCommand()">Submit</button></div>
-         <div class="Y">Y</div>
-         <div class="X">X</div>
-         <div class="text_block_scan">SCAN OF A <br>PETRIFIED FACE <br>FOUND IN TUNNEL <br>3-80-7</div>
-         <div class="texture-overlay"></div>
-                         
+        <div class="console"> 
+            Welcome to the system. Type a command to get information: <br><br>
+            Type «info [face]» to get details about the object. <br>
+            or type «next» to open a new page. <br><br>
+            Enter a command: 
+            <span id="commandDisplay"></span> <!-- Отображает ввод -->
+            <span class="cursor">_</span> <!-- Мигание курсора -->
+            <input type="text" id="commandInput" autofocus>
+        </div>
+        <div class="Y">y</div>
+        <div class="X">x</div>
+        <div class="text_block_scan">SCAN OF A <br>PETRIFIED FACE <br>FOUND IN TUNNEL <br>3-80-7</div>
+        <div class="texture-overlay"></div>
     </section>
+
     <section class="nextSection hidden">
-        <h1>Next Section</h1>
-        <p>This is the next section after entering the correct command.</p>
+            <div class="container"><div class="head_case2">
+                <img src="images/head.png" alt="">
+            </div>
+            <div class="text-block"> During archaeological <br> excavations in Tunnel <br> 3-80-7, discovered deep <br> within the former office <br> complex of the General <br> Agency for Inertnobesafety <br> Assimilation, an unusual <br> face cast was found, made <br> from an unidentified <br> material. The remains were <br> found about 3 meters off <br> the ground in one of the <br> darkened corridors, <br> suggesting the object <br> was placed in the wall <br> for long-term observation.
+            </div>
+            <div class="text-block2"> The cast, judging <br> by its expression, <br> was left at a mo- <br> ment of extreme <br> psychological <br> influence - <br> perhaps this man <br> was caught in the <br> radio waves <br> emitted by the <br> worm Luminaria, <br> or he found him- <br> self in the zone <br> of some psychoac- <br> tive influence <br> that left him <br> no chance <br> of resistance
+            </div>
+            <div class="text-block3"> Looking at this face,<br> one can assume that it<br> expresses not just the<br> emotions of one person,<br> but is a symbol of the<br> suffering that all of<br>Luminaria's<br> "subordinates" endured
+            </div>
+            <div class="text-block-top">Scan of a pet- <br>rified face found <br>in tunnel 3-80-7
+            </div>
+            <div class="Y">y</div>
+            <div class="X">x</div>
+            <div class="texture-overlay"></div>
+            <div class="back" id="backButton">
+                <img src="images/arrow.svg" alt="Back">
+            </div>
+            
+        </div>
+    </section>
+    <section class="finalSection hidden">
+            <div class="text-block-final">The final discovery <br> has been made...</div>
     </section>
     
 </body>
