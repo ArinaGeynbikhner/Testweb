@@ -283,6 +283,17 @@ body {
         z-index: 12; /* Обеспечим, чтобы кнопка была поверх других элементов */
     }
 
+    .Y2 {
+        position: fixed;
+        bottom: 50%; /* Отступ от нижнего края */
+        left: 1vw; /* Отступ от правого края */
+        font-family: "IBM Plex Mono", monospace; /* Шрифт */
+        font-size: 1vw; /* Размер текста */
+        color: #ffffff; /* Цвет текста */
+        cursor: pointer; /* Курсор для клика */
+        z-index: 12; /* Обеспечим, чтобы кнопка была поверх других элементов */
+    }
+
     .text_block_scan {
         font-family: "IBM Plex Mono", monospace;
         font-size: 1vw; /* Размер шрифта будет зависеть от ширины экрана */
