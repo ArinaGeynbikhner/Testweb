@@ -738,7 +738,7 @@ body {
     }
     .building1, .building2, .building3, .building4, .building5, .building6, .building7, .building8, .building9, .building10, 
     .building11, .building12,.building13, .building14, .building15, .building16, .building17, .building18, .building19, 
-    .building20, .building21, .building22, .building23  {
+    .building20, .building21, .building22, .building23, .building24  {
         position: absolute; /* Абсолютное позиционирование внутри .section */
         top: 50%; /* Центрируем по вертикали */
         left: 50%; /* Центрируем по горизонтали */
@@ -826,6 +826,9 @@ body {
     .building23 {
         z-index: 42; /* Z-index выше */
     }
+    .building24 {
+        z-index: 43; /* Z-index выше */
+    }
     .texture-overlay2 {
         position: fixed; /* Фиксируем слой на экране */
         top: 0; /* Прикрепляем к верхнему краю */
@@ -837,3 +840,23 @@ body {
         pointer-events: none; /* Отключаем взаимодействие с этим слоем (например, клики) */
         z-index: 60; /* Обеспечиваем, что слой будет сверху всех остальных элементов */
     }
+
+    /* Начальное состояние - скрыты и слегка смещены вниз */
+.building1, .building2, .building3, .building4, .building5, .building6,
+.building7, .building8, .building9, .building24, .building10, .building11, .building12,
+.building13, .building14, .building15, .building16, .building17, .building18,
+.building19, .building20, .building21, .building22, .building23,
+.center, .tunnel1-6-08, .tunnel1-9-07, .tunnel1-10-06, .tunnel2-3-01,
+.tunnel2-5-06, .tunnel2-8-10, .tunnel3-1-02, .tunnel3-3-06, .tunnel3-6-08,
+.tunnel3-9-10, .tunnel4-2-03, .tunnel4-5-07, .tunnel5-2-03, .tunnel5-6-08,
+.tunnel5-7-10, .tunnel6-6-03, .tunnel6-9-09, .tunnel6-10-10,
+.tunnel7-1-02, .tunnel7-3-10, .tunnel7-6-10, .tunnel8-6-10 {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Когда появляется в зоне видимости */
+.show {
+    opacity: 1;
+}
+
