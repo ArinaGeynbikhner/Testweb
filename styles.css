@@ -296,17 +296,18 @@ body {
 
     .text_block_scan {
         font-family: "IBM Plex Mono", monospace;
-        font-size: 1vw; /* Размер шрифта будет зависеть от ширины экрана */
+        font-size: 1vw; /* Размер шрифта зависит от ширины экрана */
         color: #ffffff;
         width: 60%; /* Ширина блока */
         text-align: center; /* Выравнивание текста по центру */
         position: fixed; /* Фиксируем блок относительно окна */
-        left: 50%; /* Центрируем по горизонтали */
-        top: 50%; /* Центрируем по вертикали */
-        margin-top: 15.5%;
-        transform: translate(-50%, -50%) rotate(10deg); /* Сдвигаем на 50% для точного центрирования */
+        left: 20%; /* Центрируем по горизонтали */
+        top: 73.5%; /* Центрируем блок немного ниже, чем на 50% высоты экрана */
+        transform: rotate(10deg); /* Сдвигаем по горизонтали на 50% и поворачиваем */
         z-index: 12;
     }
+    
+    
     .nextSection {
         color: #000000;
         background-color: #000000;
@@ -425,7 +426,7 @@ body {
         left: 31%;
         transform: translateX(-50%);
         top: 1vh;
-        z-index: 11;
+        z-index: 100;
     }
     
     .container2 {
@@ -433,7 +434,7 @@ body {
         justify-content: center;
         align-items: center;
         width: 100%; /* на весь экран */
-        height: 100%; /* на весь экран */
+        height: 100vh; /* на весь экран */
         position: relative; /* от этого контейнера будут зависеть все блоки */
     }
 
@@ -739,14 +740,24 @@ body {
     .building1, .building2, .building3, .building4, .building5, .building6, .building7, .building8, .building9, .building10, 
     .building11, .building12,.building13, .building14, .building15, .building16, .building17, .building18, .building19, 
     .building20, .building21, .building22, .building23, .building24  {
-        position: absolute; /* Абсолютное позиционирование внутри .section */
+        position: fixed; /* Фиксируем элемент относительно окна */
         top: 50%; /* Центрируем по вертикали */
         left: 50%; /* Центрируем по горизонтали */
-        transform: translate(-50%, -50%) scale(0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        width: 100%;  /* Адаптивная ширина */
+        height: auto; /* Авто-высота */
+        transform: translate(-50%, -50%) scale(0.9);
     }
-    
-    .building1 {
-        z-index: 24; /* Z-index ниже */
+    .building1 img, .building2 img, .building3 img, .building4 img, .building5 img, .building6 img, .building7 img, .building8 img, 
+    .building9 img, .building10 img, .building11 img, .building12 img, .building13 img, .building14 img, .building15 img, 
+    .building16 img, .building17 img, .building18 img, .building19 img, .building20 img, .building21 img, .building22 img, 
+    .building23 img, .building24 img {
+        max-width: 100%;  /* Запрещаем выход за границы контейнера */
+        height: auto;  /* Сохраняем пропорции */
+        object-fit: contain; /* Гарантируем, что изображение не деформируется */
     }
     
     .building2 {
@@ -809,7 +820,7 @@ body {
     }
 
     .building19 {
-        z-index: 38; /* Z-index выше */
+        z-index: 44; /* Z-index выше */
     }
 
     .building20 {
@@ -852,11 +863,207 @@ body {
 .tunnel5-7-10, .tunnel6-6-03, .tunnel6-9-09, .tunnel6-10-10,
 .tunnel7-1-02, .tunnel7-3-10, .tunnel7-6-10, .tunnel8-6-10 {
     opacity: 0;
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
 }
 
 /* Когда появляется в зоне видимости */
 .show {
     opacity: 1;
+}
+
+.text-block-map {
+    position: relative;
+    cursor: pointer;
+}
+
+.text-block-map::after {
+    content: "";
+    position: absolute;
+    left: 5.4vw;
+    bottom: 0;
+    width: 17%;
+    height: 0.02vw;
+    background-color: white;
+    transform: translateX(-50%);
+    animation: blink 2s infinite alternate;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.echolocationSection {
+    color: #000000;
+    background-color: #000000;
+    width: 100%;
+    height: 100vh;  /* Высота на весь экран */
+    position: relative; /* Относительное позиционирование для контейнера */
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.echolocationSection.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.hidden {
+    display: none;
+}
+.container3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* на весь экран */
+    height: 100%; /* на весь экран */
+    position: relative; /* от этого контейнера будут зависеть все блоки */  
+}
+.building25 {
+    position: absolute; /* Фиксируем элемент относительно окна */
+    top: 50%; /* Центрируем по вертикали */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translate(-50%, -50%) scale(1.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    height: auto; /* Авто-высота */
+}
+
+.building25 img {
+    max-width: 100%;  /* Запрещаем выход за границы контейнера */
+    height: auto;  /* Сохраняем пропорции */
+    object-fit: contain; /* Гарантируем, что изображение не деформируется */
+    opacity: 0; /* Скрываем изображение */
+    animation: fadeIn 2s ease-out forwards; /* Добавление анимации */
+}
+
+/* Плавное появление */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}
+
+/* Добавляем класс когда секция в области видимости */
+.building25.visible {
+    opacity: 1;
+    animation: fadeIn 1s ease-out forwards; /* Плавная анимация */
+}
+
+
+
+.text-block-map2 {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 1vw;
+    color: #ffffff;
+    width: 60%;
+    text-align: left;
+    position: absolute;
+    left: 31%;
+    transform: translateX(-50%);
+    top: 1vh;
+    z-index: 100;
+}
+
+.tunnels {
+    position: absolute; /* Блок с картинкой будет основой для позиционирования */
+    top: 50%; /* Центрируем по вертикали */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translate(-50%, -50%) scale(1.5); /* Центрируем */
+    z-index: 79;
+    opacity: 0; /* Скрываем по умолчанию */
+    animation: imageFadeIn 2s ease-out forwards; /* Анимация с новым названием */
+}
+
+.tunnels img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Ключевые кадры для плавного появления с новым названием анимации */
+@keyframes imageFadeIn {
+    0% {
+        opacity: 0; /* Начинаем с невидимости */
+    }
+    100% {
+        opacity: 0.8; /* В конце картинка становится видимой */
+    }
+}
+.circle1 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1vw; /* Еще меньше */
+    height: auto;
+    margin-top: -14%; /* Скорректированный отступ */
+    margin-left: 17%; /* Скорректированный отступ */
+    z-index: 90;
+}
+
+.circle1 img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.circle2 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1vw; /* Еще меньше */
+    height: auto;
+    margin-top: 10%; /* Скорректированный отступ */
+    margin-left: 13%; /* Скорректированный отступ */
+    z-index: 90;
+}
+
+.circle2 img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.circle3 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1vw; /* Еще меньше */
+    height: auto;
+    margin-top: 12%; /* Скорректированный отступ */
+    margin-left: -4%; /* Скорректированный отступ */
+    z-index: 90;
+}
+
+.circle3 img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.circle4 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1vw; /* Еще меньше */
+    height: auto;
+    margin-top: -4%; 
+    margin-left: -16%; 
+    z-index: 90;
+}
+
+.circle4 img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 

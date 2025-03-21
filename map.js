@@ -55,3 +55,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.addEventListener("wheel", handleScroll); // Добавляем обработчик скролла
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const echolocationBlock = document.querySelector(".text-block-map");
+    const finalSection = document.querySelector(".finalSection");
+    const echolocationSection = document.querySelector(".echolocationSection");
+
+    echolocationBlock.addEventListener("click", function () {
+        finalSection.classList.add("hidden"); // Скрываем текущую секцию
+        echolocationSection.classList.remove("hidden"); // Показываем новую секцию
+        setTimeout(() => {
+            echolocationSection.classList.add("show"); // Добавляем плавное появление
+        }, 10);
+    });
+});
