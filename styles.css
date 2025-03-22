@@ -1067,3 +1067,48 @@ body {
     object-fit: contain;
 }
 
+.equalizer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4vw; 
+    height: 4vw; 
+    opacity: 1;
+    z-index: 10000000; 
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 50%; 
+    overflow: visible; 
+}
+
+.dot {
+    fill: white; 
+    transform-origin: center;
+    animation: pulse 1s infinite ease-in-out;
+    animation-play-state: paused;
+    width: 1px; 
+    height: 1px; 
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-15px);
+    }
+    50% {
+        transform: translateY(0); 
+    }
+    75% {
+        transform: translateY(15px); 
+    }
+}
+
+/* Для анимации каждой точки */
+.equalizer.active .dot {
+    animation-play-state: running;
+}
+
+
+

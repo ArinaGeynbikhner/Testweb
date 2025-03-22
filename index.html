@@ -12,6 +12,7 @@
     <script src="./map.js"> </script>
     <script src="./echolocation_map.js"> </script>
     <script src="./audio.js"> </script>
+    <script src="./equaliser.js"> </script>
 
 </head>
 <body>
@@ -40,8 +41,8 @@
             Type «info [face]» to get details about the object. <br>
             or type «next» to open a new page. <br><br>
             Enter a command: 
-            <span id="commandDisplay"></span> <!-- Отображает ввод -->
-            <span class="cursor">_</span> <!-- Мигание курсора -->
+            <span id="commandDisplay"></span> 
+            <span class="cursor">_</span> 
             <input type="text" id="commandInput" autofocus>
         </div>
         <div class="Y">x</div>
@@ -130,10 +131,26 @@
         <div class="container3">
         <div class="tunnels"><img src="images/tunnels.svg" alt=""></div>   
         <div class="text-block-map2">click to see <br> &lt;echolocation map&gt;</div>
-        <div class="circle1"><img src="images/circle.svg" alt=""></div>
-        <div class="circle2"><img src="images/circle.svg" alt=""></div>
-        <div class="circle3"><img src="images/circle.svg" alt=""></div>
-        <div class="circle4"><img src="images/circle.svg" alt=""></div>
+        <div class="circle1"><img src="images/circle.svg" alt="">
+            <svg class="equalizer" viewBox="0 0 100 100">
+                <g class="dots"></g>
+            </svg>
+        </div>
+        <div class="circle2"><img src="images/circle.svg" alt="">
+            <svg class="equalizer" viewBox="0 0 100 100">
+                <g class="dots"></g>
+            </svg>
+        </div>
+        <div class="circle3"><img src="images/circle.svg" alt="">
+            <svg class="equalizer" viewBox="0 0 100 100">
+                <g class="dots"></g>
+            </svg>
+        </div>
+        <div class="circle4"><img src="images/circle.svg" alt="">
+            <svg class="equalizer" viewBox="0 0 100 100">
+                <g class="dots"></g>
+            </svg>
+        </div>
         <div class="building25"><img src="images/25.png" alt=""></div>
         <div class="texture-overlay2"></div>  
     </div>
