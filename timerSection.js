@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const timerSection = document.querySelector(".timerSection");  
     const circles = document.querySelectorAll(".circle1, .circle2, .circle3, .circle4");  
     const equalizers = document.querySelectorAll(".equalizer"); 
+    const textBlockMap2 = document.querySelector(".text-block-map2"); 
 
     const audioFiles = {
         circle1: new Audio("assets/sound1.mp3"),
@@ -11,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
         circle4: new Audio("assets/sound4.mp3")
     };
 
-    // проверка загрузки аудио 
     Object.keys(audioFiles).forEach(key => {
         audioFiles[key].addEventListener('canplaythrough', function () {
             console.log(`${key} загружен`);
@@ -21,10 +21,15 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // запуск аудио при клике на кружок
+     // запуск аудио при клике на кружок
     circles.forEach(circle => {
         circle.addEventListener("click", function () {
             console.log('Клик на круг:', this.classList[0]);
+
+            if (textBlockMap2) {
+                textBlockMap2.style.display = "none";  // cкрыть блок text-block-map2
+                console.log("text-block-map2 скрыт");
+            }
 
             // иконка DHM становится видимой
             if (dhmIcon) {
@@ -41,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 audio.play().catch(error => console.error("Ошибка воспроизведения:", error));
             }
 
-            // показ эквалайзера для круголёчка
+            // показ эквалайзера для кружок
             const equalizer = this.querySelector(".equalizer");
             if (equalizer) {
                 equalizer.classList.add("active");
@@ -49,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // нажатие на DHM
+    // нажатие на иконку DHM
     if (dhmIcon) {
         dhmIcon.addEventListener("click", function () {
             console.log("Нажата иконка DHM");
@@ -74,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         equalizers.forEach(equalizer => {
-            equalizer.classList.remove("active");  // остановка анимации 
+            equalizer.classList.remove("active");  // остановка анимации
         });
 
         console.log("Все кружочки и эквалайзеры скрыты.");
@@ -87,4 +92,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
-

@@ -3,6 +3,7 @@ body {
     height: 100vw;
     overflow-x: hidden;
     }
+
     .text_block_1 {
         font-family: "IBM Plex Mono", monospace;
         font-size: 1.5vw;
@@ -44,7 +45,6 @@ body {
         padding: 0;
     }
     
-    /* Текстовые блоки */
     .text_block_2 {
         width: 35%;
         margin: 3vh auto;
@@ -96,7 +96,7 @@ body {
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 1;
-        width: 25vw; 
+        width: 24vw; 
         height: auto; 
         max-width: 100vw; 
         max-height: 100vh;
@@ -443,7 +443,7 @@ body {
         top: 50%;
         left: 50%;
         margin-top: -3%;
-        transform: translate(-50%, -50%) scale(1.5); 
+        transform: translate(-50%, -50%) scale(1.4); 
         z-index: 85;
     }
     .center img {
@@ -456,7 +456,7 @@ body {
         top: 50%; 
         left: 50%; 
         margin-top: -3%;
-        transform: translate(-50%, -50%) scale(1.5); 
+        transform: translate(-50%, -50%) scale(1.4); 
         z-index: 61;
     }
     .tunnel1-6-08 img {
@@ -469,7 +469,7 @@ body {
         top: 50%; 
         left: 50%;
         margin-top: -3%;
-        transform: translate(-50%, -50%) scale(1.5); 
+        transform: translate(-50%, -50%) scale(1.4); 
         z-index: 62;
     }
     .tunnel1-9-07 img {
@@ -482,7 +482,7 @@ body {
         top: 50%; 
         left: 50%; 
         margin-top: -3%;
-        transform: translate(-50%, -50%) scale(1.5); 
+        transform: translate(-50%, -50%) scale(1.4);  
         z-index: 63;
     }
     .tunnel1-10-06 img {
@@ -495,7 +495,7 @@ body {
         top: 50%; 
         left: 50%; 
         margin-top: -3%;
-        transform: translate(-50%, -50%) scale(1.5); 
+        transform: translate(-50%, -50%) scale(1.4);  
         z-index: 65;
     }
     .tunnel2-3-01 img {
@@ -508,7 +508,7 @@ body {
         top: 50%; 
         left: 50%; 
         margin-top: -3%;
-        transform: translate(-50%, -50%) scale(1.5); 
+        transform: translate(-50%, -50%) scale(1.4); 
         z-index: 66;
     }
     .tunnel2-5-06 img {
@@ -521,7 +521,7 @@ body {
         top: 50%; 
         left: 50%; 
         margin-top: -3%;
-        transform: translate(-50%, -50%) scale(1.5);
+        transform: translate(-50%, -50%) scale(1.4); 
         z-index: 67;
     }
     .tunnel2-8-10 img {
@@ -534,7 +534,7 @@ body {
         top: 50%; 
         left: 50%;
         margin-top: -3%; 
-        transform: translate(-50%, -50%) scale(1.5);
+        transform: translate(-50%, -50%) scale(1.4); 
         z-index: 68;
     }
     .tunnel3-1-02 img {
@@ -547,7 +547,7 @@ body {
         top: 50%; 
         left: 50%; 
         margin-top: -3%;
-        transform: translate(-50%, -50%) scale(1.5);
+        transform: translate(-50%, -50%) scale(1.4); 
         z-index: 69;
     }
     .tunnel3-3-06 img {
@@ -560,7 +560,7 @@ body {
         top: 50%; 
         left: 50%; 
         margin-top: -3%;
-        transform: translate(-50%, -50%) scale(1.5);
+        transform: translate(-50%, -50%) scale(1.4); 
         z-index: 70;  
     }
     .tunnel3-6-08 img {
@@ -573,7 +573,7 @@ body {
         top: 50%; 
         left: 50%; 
         margin-top: -3%;
-        transform: translate(-50%, -50%) scale(1.5);
+        transform: translate(-50%, -50%) scale(1.4); 
         z-index: 71;
     }
     .tunnel3-9-10 img {
@@ -586,7 +586,7 @@ body {
         top: 50%; 
         left: 50%;
         margin-top: -3%; 
-        transform: translate(-50%, -50%) scale(1.5);
+        transform: translate(-50%, -50%) scale(1.4); 
         z-index: 72;
     }
     .tunnel4-2-03 img {
@@ -599,7 +599,7 @@ body {
         top: 50%; 
         left: 50%; 
         margin-top: -3%;
-        transform: translate(-50%, -50%) scale(1.5);
+        transform: translate(-50%, -50%) scale(1.4); 
         z-index: 73;
     }
     .tunnel4-5-07 img {
@@ -612,7 +612,7 @@ body {
         top: 50%; 
         left: 50%; 
         margin-top: -3%;
-        transform: translate(-50%, -50%) scale(1.5);
+        transform: translate(-50%, -50%) scale(1.4); 
         z-index: 74;
     }
     .tunnel5-2-03 img {
@@ -625,7 +625,7 @@ body {
         top: 50%; 
         left: 50%; 
         margin-top: -3%;
-        transform: translate(-50%, -50%) scale(1.5);
+        transform: translate(-50%, -50%) scale(1.4); 
         z-index: 75;
     }
     .tunnel5-6-08 img {
@@ -638,7 +638,7 @@ body {
         top: 50%; 
         left: 50%; 
         margin-top: -3%;
-        transform: translate(-50%, -50%) scale(1.5);
+        transform: translate(-50%, -50%) scale(1.4); 
         z-index: 76;
     }
     .tunnel5-7-10 img {
@@ -651,7 +651,7 @@ body {
         top: 50%; 
         left: 50%; 
         margin-top: -3%;
-        transform: translate(-50%, -50%) scale(1.5);
+        transform: translate(-50%, -50%) scale(1.4); 
         z-index: 77;
     }
     .tunnel6-6-03 img {
@@ -664,7 +664,7 @@ body {
         top: 50%; 
         left: 50%; 
         margin-top: -3%;
-        transform: translate(-50%, -50%) scale(1.5);
+        transform: translate(-50%, -50%) scale(1.4); 
         z-index: 78;
     }
     .tunnel6-9-09 img {
@@ -677,7 +677,7 @@ body {
         top: 50%; 
         left: 50%; 
         margin-top: -3%;
-        transform: translate(-50%, -50%) scale(1.5);
+        transform: translate(-50%, -50%) scale(1.4); 
         z-index: 79;
     }
     .tunnel6-10-10 img {
@@ -690,7 +690,7 @@ body {
         top: 50%; 
         left: 50%; 
         margin-top: -3%;
-        transform: translate(-50%, -50%) scale(1.5);
+        transform: translate(-50%, -50%) scale(1.4); 
         z-index: 80;
     }
     .tunnel7-1-02 img {
@@ -703,7 +703,7 @@ body {
         top: 50%; 
         left: 50%; 
         margin-top: -3%;
-        transform: translate(-50%, -50%) scale(1.5);
+        transform: translate(-50%, -50%) scale(1.4); 
         z-index: 81;
     }
     .tunnel7-3-10 img {
@@ -716,7 +716,7 @@ body {
         top: 50%; 
         left: 50%; 
         margin-top: -3%;
-        transform: translate(-50%, -50%) scale(1.5);
+        transform: translate(-50%, -50%) scale(1.4); 
         z-index: 82;
     }
     .tunnel7-6-10 img {
@@ -729,7 +729,7 @@ body {
         top: 50%; 
         left: 50%; 
         margin-top: -3%;
-        transform: translate(-50%, -50%) scale(1.5);
+        transform: translate(-50%, -50%) scale(1.4); 
         z-index: 83;
     }
     .tunnel8-6-10 img {
@@ -749,7 +749,7 @@ body {
         align-items: center;
         z-index: 10;
         height: auto; 
-        transform: translate(-50%, -50%) scale(1.7);
+        transform: translate(-50%, -50%) scale(1.5);
     }
     .building1 img, .building2 img, .building3 img, .building4 img, .building5 img, .building6 img, .building7 img, .building8 img, 
     .building9 img, .building10 img, .building11 img, .building12 img, .building13 img, .building14 img, .building15 img, 
@@ -923,7 +923,7 @@ body {
     position: absolute; 
     top: 50%; 
     left: 50%; 
-    transform: translate(-50%, -50%) scale(1.7);
+    transform: translate(-50%, -50%) scale(1.5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -974,7 +974,7 @@ body {
     position: absolute; 
     top: 50%; 
     left: 50%;
-    transform: translate(-50%, -50%) scale(1.5);
+    transform: translate(-50%, -50%) scale(1.4);
     z-index: 9999;
     opacity: 0;
     animation: imageFadeIn 2s ease-out forwards; 
@@ -1002,8 +1002,8 @@ body {
     transform: translate(-50%, -50%);
     width: 1.5vw; 
     height: auto;
-    margin-top: -12.2%; 
-    margin-left: 15%;
+    margin-top: -10.5%; 
+    margin-left: 13%;
     z-index: 99999;
 }
 
@@ -1020,8 +1020,8 @@ body {
     transform: translate(-50%, -50%);
     width: 1.5vw; 
     height: auto;
-    margin-top: 8.5%;
-    margin-left: 11%; 
+    margin-top: 7.6%;
+    margin-left: 9.5%; 
     z-index: 99999;
 }
 
@@ -1038,8 +1038,8 @@ body {
     transform: translate(-50%, -50%);
     width: 1.5vw; 
     height: auto;
-    margin-top: 10.5%; 
-    margin-left: -3.5%; 
+    margin-top: 9%; 
+    margin-left: -3%; 
     z-index: 99999;
 }
 
@@ -1056,8 +1056,8 @@ body {
     transform: translate(-50%, -50%);
     width: 1.5vw; 
     height: auto;
-    margin-top: -4%; 
-    margin-left: -16%; 
+    margin-top: -3%; 
+    margin-left: -12.5%; 
     z-index: 99999;
 }
 
@@ -1112,11 +1112,11 @@ body {
 .dhm-icon {
     display: none;  
     position: absolute;  
-    top: 50%;  
-    left: 50%;  
-    transform: translate(-50%, -50%);  
-    z-index: 100000000;  
-
+    left: 2.5%;
+    transform: translateX(-50%) scale(1.3);
+    top: -1vh;
+    z-index: 100000000;
+    animation: blink-animation 2s infinite alternate;  
 }
 
 .dhm-icon.hidden {
@@ -1124,8 +1124,8 @@ body {
 }
 
 .dhm-icon img {
-    max-width: 100px; 
-    max-height: 100px; 
+    max-width: 100%; 
+    max-height: 100%; 
 }
 
 #dhmIcon {
@@ -1135,16 +1135,21 @@ body {
     right: 10px; 
     z-index: 9999;
   }
-  
 
 .blink {
-    animation: blink-animation 1s infinite alternate;
+    animation: blink-animation 2s infinite alternate;
     opacity: 1;
 }
 
 @keyframes blink-animation {
-    0% { opacity: 0.2; }
-    100% { opacity: 1; }
+    0% { 
+        opacity: 0.2; 
+        transform: translateX(-50%) scale(1.1);  /* Начальный размер */
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateX(-50%) scale(1.3);  /* Увеличиваем на 10% */
+    }
 }
 
 .timerSection {
@@ -1156,7 +1161,133 @@ body {
     pointer-events: none;
     transition: opacity 0.5s ease-in-out;
 }
-.timerSection {
-    scroll-behavior: smooth;  /* Это обеспечит плавную прокрутку */
+    .timer_circle_left {
+        position: absolute; 
+        top: 50%; 
+        left: 50%; 
+        margin-left: -16.7%;
+        transform: translate(-50%, -50%);
+        width: 33vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000000;
+        height: auto;
+    }
+    .timer_circle_left img {
+        max-width: 100%;  
+        height: auto;  
+        object-fit: contain; 
+        opacity: 1; 
+        }
+    .timer_circle_middle {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    width: 32vw;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000001;
+    height: auto;
+    }
+
+    .timer_circle_middle img {
+    max-width: 100%;  
+    height: auto;  
+    object-fit: contain; 
+    opacity: 1; 
+    animation: rotateImagemiddle 160s infinite linear;
+    }
+    
+    @keyframes rotateImagemiddle {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    .timer_circle_right {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    width: 40vw;
+    transform: translate(-50%, -50%) scale(0.83) rotate(-3deg);
+    margin-left: 16.8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000002;
+    height: auto;
+    }
+
+    .timer_circle_right img {
+        max-width: 100%;  
+        height: auto;  
+        object-fit: contain; 
+        opacity: 1; 
+        }
+
+.numbers_middle{
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    width: 38vw;
+    margin-top: -0.1%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000000;
+    height: auto;
 }
 
+.numbers_middle img {
+    max-width: 100%;  
+    height: auto;  
+    object-fit: contain; 
+    opacity: 1; 
+    }
+    .numbers_right {
+        position: absolute; 
+        top: 50%; 
+        left: 50%; 
+        width: 24vw;
+        margin-left: 16.7%;
+        margin-top: -0.05%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10000011;
+        height: auto;
+    }
+    .numbers_right img {
+        max-width: 100%;  
+        height: auto;  
+        object-fit: contain; 
+        opacity: 1; 
+        }
+
+        .numbers_left {
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            width: 24vw;
+            margin-left: -16.7%;
+            margin-top: -0.05%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000012;
+            height: auto;
+        }
+        .numbers_left img {
+            max-width: 100%;  
+            height: auto;  
+            object-fit: contain; 
+            opacity: 1; 
+            }
