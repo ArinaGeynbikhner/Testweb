@@ -1110,29 +1110,30 @@ body {
 }
 
 .dhm-icon {
-    display: none;  /* Скрыта по умолчанию */
-    position: absolute;  /* или fixed, в зависимости от того, где ты хочешь отображать иконку */
-    top: 50%;  /* Позиционируем иконку по вертикали */
-    left: 50%;  /* Позиционируем иконку по горизонтали */
-    transform: translate(-50%, -50%);  /* Центрируем иконку */
-    z-index: 100000000;  /* Убедись, что иконка будет поверх остальных элементов */
+    display: none;  
+    position: absolute;  
+    top: 50%;  
+    left: 50%;  
+    transform: translate(-50%, -50%);  
+    z-index: 100000000;  
+
 }
 
 .dhm-icon.hidden {
-    display: none;  /* Скрыта, если имеет класс "hidden" */
+    display: none; 
 }
 
 .dhm-icon img {
-    max-width: 100px; /* Например, ограничение по ширине */
-    max-height: 100px; /* Ограничение по высоте */
+    max-width: 100px; 
+    max-height: 100px; 
 }
 
 #dhmIcon {
-    display: none; /* Изначально иконка скрыта */
-    position: fixed; /* Размещение на экране */
-    top: 10px; /* Пример позиции */
-    right: 10px; /* Пример позиции */
-    z-index: 9999; /* Убедитесь, что иконка будет на переднем плане */
+    display: none; 
+    position: fixed; 
+    top: 10px;
+    right: 10px; 
+    z-index: 9999;
   }
   
 
