@@ -1,7 +1,7 @@
-// Массив символов для шифрования
+// массив символов для шифрования
 const possibleChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
 
-// Функция для генерации случайной строки заданной длины
+// случайная генерация строки 
 function randomString(length) {
     let result = '';
     for (let i = 0; i < length; i++) {
@@ -10,25 +10,22 @@ function randomString(length) {
     return result;
 }
 
-// Функция для шифрования только выбранных слов
+// шифрование только выбранных слов
 function encryptSelectedWords(blockId, wordsToEncrypt) {
     const block = document.querySelector(blockId);
-    if (!block) return; // Если блок не найден, выходим
+    if (!block) return; 
 
     let originalText = block.innerHTML;
 
-    // Сохраняем <br> теги как маркер, чтобы их не потерять
     const preservedText = originalText.replace(/<br\s*\/?>/g, '___BR___');
     
-    // Разделяем текст на слова
-    let words = preservedText.split(/\s+/); // Улучшенный разбор текста по пробелам
+    let words = preservedText.split(/\s+/); 
 
-    // Используем setInterval для плавного обновления
+    // плавное обновление
     let interval = setInterval(() => {
         let updated = false;
         const newWords = words.map(word => {
-            // Если слово входит в список слов для шифрования, заменяем его на случайное
-            if (wordsToEncrypt.includes(word.replace(/[^a-zA-Z]/g, ''))) { // Игнорируем знаки препинания
+            if (wordsToEncrypt.includes(word.replace(/[^a-zA-Z]/g, ''))) { 
                 updated = true; 
                 return randomString(word.length); 
             } else {
@@ -36,21 +33,17 @@ function encryptSelectedWords(blockId, wordsToEncrypt) {
             }
         });
 
-        // Восстанавливаем <br> теги, заменяя маркер назад
         const newText = newWords.join(' ').replace(/___BR___/g, '<br>');
 
-        // Обновляем содержимое блока, если были изменения
         if (updated) {
             block.innerHTML = newText;
         } else {
-            clearInterval(interval); // Если изменений нет, прекращаем интервал
+            clearInterval(interval); 
         }
-    }, 50); // Интервал смены слов
+    }, 50); // интервал смены слов
 }
 
-// Ждем загрузки DOM, чтобы все блоки были найдены
 document.addEventListener("DOMContentLoaded", function () {
-    // Слово, которые будут шифроваться для каждого блока
     const textBlockWords = {
         '.text-block': ['archaeological', 'excavations', 'Tunnel', 'office', 'General', 'discovered', 'material', 'corridors', 'long-term'],
         '.text-block2': ['cast', 'expression', 'psychological', 'waves', 'Luminaria', 'radio', 'influence', 'resistance', 'emitted'],
@@ -59,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
         '.text-block6': ['subordinates', 'expression', 'influence', 'psychological', 'waves', 'exposure', 'altered', 'state']
     };
     
-    // Применяем шифрование ко всем блокам с соответствующими словами
+    // шифрование ко всем блокам с этими словами
     for (const [blockId, words] of Object.entries(textBlockWords)) {
         encryptSelectedWords(blockId, words);
     }

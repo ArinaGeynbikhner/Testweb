@@ -8,47 +8,47 @@ document.addEventListener("DOMContentLoaded", function () {
     const finalSection = document.querySelector(".finalSection");
     const backButton = document.getElementById("backButton");
 
-    // Гарантированный автофокус на поле ввода при загрузке
+    // автофокус на поле ввода при загрузке
     setTimeout(() => inputField.focus(), 100);
 
-    // Клик по консоли также активирует ввод
+    // клик по консоли активирует ввод
     document.querySelector(".console").addEventListener("click", function () {
         inputField.focus();
     });
 
     inputField.addEventListener("input", function () {
-        displayField.textContent = inputField.value; // Отображаем вводимый текст
+        displayField.textContent = inputField.value; // отображаем вводимый текст
     });
 
     inputField.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
-            event.preventDefault(); // Предотвращаем стандартное поведение Enter
+            event.preventDefault(); 
             executeCommand();
         }
     });
 
     function executeCommand() {
-        const command = inputField.value.trim().toLowerCase(); // Получаем команду
+        const command = inputField.value.trim().toLowerCase();
 
         if (command === "info [face]") {
-            section2.classList.add("hidden"); // Скрываем текущую секцию
-            nextSection.classList.remove("hidden"); // Показываем nextSection
-            finalSection.classList.add("hidden"); // Убеждаемся, что finalSection скрыта
+            section2.classList.add("hidden"); 
+            nextSection.classList.remove("hidden");
+            finalSection.classList.add("hidden");
         } else if (command === "next") {
-            section2.classList.add("hidden"); // Скрываем текущую секцию
-            nextSection.classList.add("hidden"); // Скрываем nextSection
-            finalSection.classList.remove("hidden"); // Показываем finalSection
+            section2.classList.add("hidden");
+            nextSection.classList.add("hidden");
+            finalSection.classList.remove("hidden");
         } else {
             alert("Invalid command! Try again.");
         }
 
-        // Очищаем поле ввода
+        // очищаем поле ввода
         inputField.value = "";
         displayField.textContent = "";
-        cursor.style.display = "inline"; // Показываем курсор снова
+        cursor.style.display = "inline"; // показываем курсор снова
     }
 
-    // Обработчик кнопки возврата в секцию 2
+    // обработчик кнопки возврата в секцию 2
     if (backButton) {
         backButton.addEventListener("click", function () {
             nextSection.classList.add("hidden"); // Скрываем всю секцию
@@ -56,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Если поле ввода теряет фокус — возвращаем обратно
     inputField.addEventListener("blur", function () {
         setTimeout(() => inputField.focus(), 100);
     });

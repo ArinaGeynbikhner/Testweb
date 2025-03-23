@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let activeItem = null;
 
-    // Проверяем, что элементы draggable существуют
+    // проверяем, что элементы draggable существуют
     console.log('Количество draggable элементов на странице: ', draggables.length);
 
-    // Добавляем обработчик перетаскивания для каждого draggable элемента
+    // добавляем обработчик перетаскивания для каждого draggable элемента
     draggables.forEach(item => {
         item.addEventListener("mousedown", (e) => {
             if (e.button !== 0) return; // Только левая кнопка мыши
@@ -18,12 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
             activeItem = item;
 
-            // Делаем элемент абсолютно позиционированным
+            // делаем элемент абсолютно позиционированным
             activeItem.style.position = "absolute";
             activeItem.style.zIndex = "1000";
             activeItem.style.margin = "0";
 
-            // Перемещаем элемент по координатам курсора
+            // перемещаем элемент по координатам курсора
             document.body.appendChild(activeItem);
             moveItem(e);
 
@@ -56,11 +56,11 @@ document.addEventListener("DOMContentLoaded", () => {
             activeItem.classList.add("falling");
 
             setTimeout(() => {
-                // Удаляем элемент после 700 мс (когда он падает в черную дыру)
+                // удаляем элемент после 700 мс (когда он падает в черную дыру)
                 if (activeItem && activeItem.parentElement) {
                     activeItem.remove();
                     console.log('Элемент удалён');
-                    checkIfAllDisappeared(); // Проверяем, все ли исчезли
+                    checkIfAllDisappeared(); // проверяем, все ли исчезли
                 }
             }, 700);
         }

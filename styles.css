@@ -1105,10 +1105,57 @@ body {
     }
 }
 
-/* Для анимации каждой точки */
 .equalizer.active .dot {
     animation-play-state: running;
 }
 
+.dhm-icon {
+    display: none;  /* Скрыта по умолчанию */
+    position: absolute;  /* или fixed, в зависимости от того, где ты хочешь отображать иконку */
+    top: 50%;  /* Позиционируем иконку по вертикали */
+    left: 50%;  /* Позиционируем иконку по горизонтали */
+    transform: translate(-50%, -50%);  /* Центрируем иконку */
+    z-index: 100000000;  /* Убедись, что иконка будет поверх остальных элементов */
+}
 
+.dhm-icon.hidden {
+    display: none;  /* Скрыта, если имеет класс "hidden" */
+}
+
+.dhm-icon img {
+    max-width: 100px; /* Например, ограничение по ширине */
+    max-height: 100px; /* Ограничение по высоте */
+}
+
+#dhmIcon {
+    display: none; /* Изначально иконка скрыта */
+    position: fixed; /* Размещение на экране */
+    top: 10px; /* Пример позиции */
+    right: 10px; /* Пример позиции */
+    z-index: 9999; /* Убедитесь, что иконка будет на переднем плане */
+  }
+  
+
+.blink {
+    animation: blink-animation 1s infinite alternate;
+    opacity: 1;
+}
+
+@keyframes blink-animation {
+    0% { opacity: 0.2; }
+    100% { opacity: 1; }
+}
+
+.timerSection {
+    color: #000000;
+    background-color: #000000;
+    width: 100%;
+    height: 100vh; 
+    position: relative; 
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+}
+.timerSection {
+    scroll-behavior: smooth;  /* Это обеспечит плавную прокрутку */
+}
 

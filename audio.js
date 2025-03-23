@@ -11,16 +11,17 @@ document.addEventListener("DOMContentLoaded", function () {
     // воспроизведение звука при клике
     function playAudio(circleClass) {
         if (audioFiles[circleClass]) {
-            audioFiles[circleClass].volume = 0.4; 
+            audioFiles[circleClass].volume = 0.4;
             audioFiles[circleClass].play().catch(error => {
                 console.error(`Ошибка воспроизведения для ${circleClass}:`, error);
             });
 
-            // останавка анимации эквалайзера, когда звук выключается
+            // остановка анимации эквалайзера после прогигрыша
             audioFiles[circleClass].addEventListener("ended", function () {
                 const equalizer = document.querySelector(`.${circleClass} .equalizer`);
                 if (equalizer) {
                     equalizer.classList.remove("active"); 
+                    console.log(`Анимация эквалайзера для ${circleClass} остановлена`);
                 }
             });
         }
@@ -28,17 +29,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     circles.forEach(circle => {
         circle.addEventListener("click", function () {
-            const className = this.classList[0]; // Получаем имя класса (например, circle1)
+            const className = this.classList[0]; // имя класса
             console.log(`Клик на ${className}`);
             playAudio(className);
 
             // анимация эквалайзера при клике
             const equalizer = this.querySelector(".equalizer");
             if (equalizer) {
-                equalizer.classList.add("active");
+                equalizer.classList.add("active");  
+                console.log(`Анимация эквалайзера для ${className} началась`);
             }
         });
     });
-
 });
 
